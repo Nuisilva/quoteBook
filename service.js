@@ -15,7 +15,7 @@ app.service ('mainService', function() {
 
    this.getData = function () {
 
-        return quotes;
+        return "test";
     };
 
     this.addData = function (dataObject) {
@@ -25,6 +25,6 @@ app.service ('mainService', function() {
 
     };
 
-    
+    return daQuotes;
 
 });

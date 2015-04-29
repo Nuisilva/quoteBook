@@ -3,11 +3,11 @@ var app = angular.module('quoteBook');
 app.controller('mainCtrl', function($scope, mainService) {
  
 
- 	$scope.getQuote = function() {
-    $scope.quotes = mainService.getData();
+ 	var getQuote = function() {
+    $scope.quotes = mainservice.getData();
   }
   
-  $scope.getQuote();
+  getQuote();
 
 
 });
