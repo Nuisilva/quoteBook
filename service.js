@@ -1,9 +1,12 @@
 var app = angular.module('quoteBook');
-app.service ('mainService', function() {	
+app.service('mainService', function() {	
 	
-    var daQuotes = {};
+    
+
+    
 
     var quotes = [
+    { text: 'test', author: 'test'},
     { text: 'Life isn\'t about getting and having, it\'s about giving and being.', author: 'Kevin Kruse'},
     { text: 'Whatever the mind of man can conceive and believe, it can achieve', author: 'Napoleon Hill'},
     { text: 'Strive not to be a success, but rather to be of value.', author: 'Albert Einstein'},
@@ -14,17 +17,20 @@ app.service ('mainService', function() {
   ];
 
    this.getData = function () {
-
-        return "test";
+        console.log (quotes)
+        return quotes;
     };
 
-    this.addData = function (dataObject) {
-        if (datObject.text && dataObject.author){
-            daQuotes.push(dataObject);
+    this.addData = function (theText, theAuthor) {
+        quotes.push({text: theText, author: theAuthor})
+    };
+
+    this.removeData = function (words){
+        for (var i=0; i < quotes.length; i++){
+            if(words === quotes[i].author){
+               quotes.splice(i, 1)
+            }
         }
-
-    };
-
-    return daQuotes;
+    }
 
 });

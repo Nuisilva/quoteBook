@@ -1,13 +1,17 @@
 var app = angular.module('quoteBook');
 
-app.controller('mainCtrl', function($scope, mainService) {
- 
+app.controller('ctrl', function($scope, mainService) {
+	
+	$scope.removeTxt = ""
 
- 	var getQuote = function() {
-    $scope.quotes = mainservice.getData();
-  }
-  
-  getQuote();
+    $scope.popQuotes = mainService.getData();
+    
+    $scope.addQuotes= function(){
+   		mainService.addData($scope.text, $scope.author);
+    }   
+    $scope.removeQuotes = function(){
+    	mainService.removeData($scope.removeTxt);
+    } 
 
 
 });
